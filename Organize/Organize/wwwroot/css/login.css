@@ -1,0 +1,57 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica;
+    color: white;
+    border: none;
+}
+
+#card-login {
+    background-color: #313131;
+    width: 400px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center;
+    padding: 20px 30px;
+    margin-top: 30vh;
+    border-radius: 0px 10px 0px 10px;
+}
+
+body {
+    justify-content: center;
+    background-image: url(white-2486923_1280.jpg);
+    background-size: cover;
+}
+
+label, input {
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+a, label {
+    font-size: .8rem;
+}
+
+input {
+    border-bottom: 2px solid #D3D3D3;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    padding: 5px;
+    color: black;
+}
+
+#Logar {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: 30px;
+    background-color: white;
+    color: #2D2B2B !important;
+    display: block;
+    padding: 10px;
+}
