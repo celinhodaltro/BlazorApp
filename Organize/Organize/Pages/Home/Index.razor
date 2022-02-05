@@ -1,0 +1,75 @@
+﻿@page "/"
+@page "/index"
+@using Lib.Data
+@using Lib.Services
+@using Lib.Data.Entities
+
+
+
+<div class="box">
+
+    <div class="row mt-2">
+        <div class="col-8">
+            <input type="text" @bind="novatarefa.Nome" placeholder="Digite o nome da sua tarefa" class="form-control" />
+        </div>
+        <div class="col-2">
+            <button class="btn btn-primary form-control" @onclick="AdicionarTarefa">Adicionar</button>
+        </div>
+        <div class="col-2">
+            <button class="btn btn-danger form-control" @onclick="LimparTarefa">Limpar</button>
+        </div>
+    </div>
+
+    <table class="table table-bordered mt-2">
+
+        <tr>
+            <th>Ativo</th>
+            <th style="width:800px">Nome</th>
+            <th>Açoes</th>
+        </tr>        @{
+            foreach (var tarefa in Tarefas)
+            {
+                <tr>
+
+
+                    <td><input type="checkbox" id="sucess" @bind="tarefa.Feito" @onclick="e=> FeitoTarefa(tarefa)" class="form-control"/></td>
+                    <td>@tarefa.Nome</td>
+                    <td><button class="btn btn-danger" @onclick="e => ExcluirTarefa(tarefa.Id)">X</button></td>
+                </tr>
+            }
+        }
+    </table>
+</div>
+
+
+
+@code{
+    Tarefa novatarefa = new Tarefa();
+
+    public void AdicionarTarefa()
+    {
+        Services.Tarefa().Adicionar(novatarefa);
+        Tarefas = Services.Tarefa().ConsultarTodos();
+    }
+
+    List<Tarefa> Tarefas = Services.Tarefa().ConsultarTodos();
+
+    public void ExcluirTarefa(int id)
+    {
+        Services.Tarefa().Excluir(id);
+        Tarefas = Services.Tarefa().ConsultarTodos();
+    }
+
+    public void LimparTarefa()
+    {
+        Services.Tarefa().Limpar();
+        Tarefas = Services.Tarefa().ConsultarTodos();
+    }
+
+    public void FeitoTarefa(Tarefa task)
+    {
+        Services.Tarefa().Feito(task);
+        Tarefas = Services.Tarefa().ConsultarTodos();
+    }
+
+}
