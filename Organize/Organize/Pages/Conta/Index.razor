@@ -10,18 +10,18 @@
 <div id="card-login">
 
     <label>Login:</label>
-    <input placeholder="Digite o seu Login" />
+    <input @bind="Conta.Nome" placeholder="Digite o seu Login" />
 
     <label>Senha:</label>
-    <input type="password" placeholder="Digite a sua Senha" />
+    <input type="password" @bind="Conta.Senha" placeholder="Digite a sua Senha" />
 
     <input type="submit" id="Logar" value="login">
-    <a href="#">Criar conta</a>
+    <a href="/Criar">Criar conta</a>
 </div>
 
 
 
 @code{
-
+    Conta Conta = new Conta();
 
 }

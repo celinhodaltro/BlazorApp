@@ -1,0 +1,33 @@
+﻿@page "/Conta/Criar"
+@using Lib.Data
+@using Lib.Services
+@using Lib.Data.Entities
+@using Lib.Dto
+
+
+<link href="css/login.css" rel="stylesheet" />
+
+<div id="card-login">
+
+    <label>Login:</label>
+    <input @bind="NovaConta.Nome" placeholder="Digite o seu Login" />
+
+    <label>Senha:</label>
+    <input type="password" @bind="NovaConta.Senha" placeholder="Digite a sua Senha" />
+
+    <label>Repita a senha:</label>
+    <input type="password" @bind="NovaConta.RepetirSenha" placeholder="Repita a senha" />
+
+    <label>Email:</label>
+    <input type="password" @bind="NovaConta.Email" placeholder="Repita a senha" />
+
+    <input type="submit" id="Criar" value="Criar Conta">
+    <a href="/Conta">Logar</a>
+</div>
+
+
+
+@code{
+    CriarContaDto NovaConta = new CriarContaDto();
+
+}
