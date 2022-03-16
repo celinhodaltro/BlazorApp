@@ -15,6 +15,11 @@ namespace Lib.Services
             return new TarefaService();
         }
 
+        public static ContaService Conta()
+        {
+            return new ContaService();
+        }
+
 
     }
 }

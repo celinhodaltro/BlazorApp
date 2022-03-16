@@ -8,7 +8,7 @@
 <link href="css/login.css" rel="stylesheet" />
 
 <div id="card-login">
-
+    <h3>Registrar</h3>
     <label>Login:</label>
     <input @bind="NovaConta.Nome" placeholder="Digite o seu Login" />
 
@@ -19,10 +19,10 @@
     <input type="password" @bind="NovaConta.RepetirSenha" placeholder="Repita a senha" />
 
     <label>Email:</label>
-    <input type="password" @bind="NovaConta.Email" placeholder="Repita a senha" />
+    <input type="email" @bind="NovaConta.Email" placeholder="Repita a senha" />
 
-    <input type="submit" id="Criar" value="Criar Conta">
-    <a href="/Conta">Logar</a>
+    <button id="Criar" class="form-control" @onclick="criarConta">Criar Conta </button>
+    <p class="mt-2">Se deseja logar <a href="/Conta">Clique aqui!</a></p>
 </div>
 
 
@@ -30,4 +30,8 @@
 @code{
     CriarContaDto NovaConta = new CriarContaDto();
 
+    public void criarConta()
+    {
+        Services.Conta().Criar(NovaConta);
+    }
 }

@@ -28,7 +28,8 @@ namespace Lib.Data
             base.OnConfiguring(dbContextOptionsBuilder);
 
         }
-        public DbSet<Entities.Tarefa> Tarefas { get; set; }
+        public DbSet<Tarefa> Tarefas { get; set; }
+        public DbSet<Conta> Contas { get; set; }
 
 
 

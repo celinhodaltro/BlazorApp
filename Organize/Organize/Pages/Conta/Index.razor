@@ -9,6 +9,9 @@
 
 <div id="card-login">
 
+
+    <h3>Logar</h3>
+
     <label>Login:</label>
     <input @bind="Conta.Nome" placeholder="Digite o seu Login" />
 
@@ -16,7 +19,7 @@
     <input type="password" @bind="Conta.Senha" placeholder="Digite a sua Senha" />
 
     <input type="submit" id="Logar" value="login">
-    <a href="/Criar">Criar conta</a>
+    <p class="mt-2">Se deseja criar a sua conta, <a href="/Conta/Criar">clique aqui</a> para se registrar!</p>
 </div>
 
 
